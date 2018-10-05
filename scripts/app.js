@@ -100,7 +100,9 @@
     this.reset_watch = function(){
 
         start_End_runing(false);
-        totalBreaks = 0;
+        breakTime.s = 0;
+        breakTime.m = 0;
+        breakTime.h = 0;
         secounds = 0;
         totalTime = null;
         startTimeTxt.innerHTML = '';
