@@ -11,7 +11,7 @@
     <title>Simple Stop Watch</title>
 </head>
 
-<body class="container">   
+<body class="container">
     <div class="small-wrap">
     <div class="row">
         <div class="col-md-12">
@@ -30,15 +30,18 @@
         <div class="col-md-12">
         </div>
         <div class="col-md-12">
-            <button id="endB" class="m-1 rounded btn-danger">Stop</button>
+            <button id="endB" class="m-1 rounded btn-warning">Stop</button>
         </div>
         <div class="col-md-12">
-            <button id="resetB" class="m-1 rounded btn-primary">Reset</button>
+            <button id="resetB" class="m-1 rounded btn-danger">Reset</button>
+        </div>
+        <div class="col-md-12">
+            <button id="endB" data-toggle="collapse" data-target="#result" class="m-1 rounded btn-primary">Result Table</button>
         </div>
         
         
        
-                <div class="row results-wrapper">
+                <div id="result" class="collapse row results-wrapper">
                 <div class="col-md-12">
                     <h2>Results Table</h2>
                 </div>
