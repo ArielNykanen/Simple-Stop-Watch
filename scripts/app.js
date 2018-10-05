@@ -132,6 +132,7 @@
         totalTimeTxt.innerHTML = '0:00:0';
         runningTimeTxt.innerHTML = '0:00:0';
         breakRunTimeTxt.innerHTML = '0:00:0';
+        breakTimeTxt.innerHTML = '';
     }
 
     Object.defineProperty(
