@@ -92,8 +92,10 @@
             minutes++;
             secounds = 0;
             }
-        if(minutes === 59 && secounds === 59)
+        if(minutes === 60){
             hours++; 
+            minutes = 0;
+        }
             runningTimeTxt.innerHTML = `${hours}:${minutes > 10 ? '':'0'}${minutes}:${Math.round(secounds) > 10 ? '':'0'}${Math.round(secounds)}`;
             totalTime = `${hours}:${minutes > 10 ? '':'0'}${minutes}:${Math.round(secounds) > 10 ? '':'0'}${Math.round(secounds)}`;
         },100)
@@ -102,7 +104,7 @@
 
     //for the total break time gui
     this.get_break_gui = function(){
-        if(breakTime.s > 1)//adding the break time if its more then 1 sec
+        if(breakTime.s >= 0.10)//adding the break time if its more then 1 sec
         breakTimeTxt.innerHTML = totalBreaks;
         else
         breakTimeTxt.innerHTML = ' None';
@@ -117,10 +119,14 @@
             breakTime.s += 0.10 ;
         if(breakTime.s > 59){
             gui_min++
+            gui_sec = 0;
             breakTime.m++;
             breakTime.s = 0;
+            
         }
-        if(breakTime.m === 59 && breakTime.s === 59){
+        if(breakTime.m === 60){
+            gui_min = 0;
+            breakTime.m = 0;
             breakTime.h++; 
             gui_hou++;
         }
